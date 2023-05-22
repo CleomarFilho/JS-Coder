@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contole de estoque</title>
-    <script defer src="projetoFinal.Js"></script>
+    <link rel="stylesheet" href="CSS/projetoFinal.css" />
+    <script defer src="JS/projetoFinal.Js"></script>
   </head>
   <body>
-    <h1>Controle de estoque</h1>
+    <h1 id="textoTitlo">Controle de estoque</h1>
     <hr />
     <section id="sectionAdd">
-      <h2>Cadastro de novo Produto</h2>
+      <h2 id="textSectionAdd">Cadastro de novo Produto</h2>
       <div id="add">
         <label for="indice">Indice:</label>
         <input type="text" name="indice" id="indice" />
@@ -24,17 +25,17 @@
         <label for="valor">Valor (venda):</label>
         <input type="text" name="valor" id="valor" />
         <button id="btnAdd">Cadastrar</button>
-        <hr />
       </div>
+      <hr />
     </section>
     <section id="sectionRemove">
-      <h2>Remover Produto</h2>
+      <h2 id="textoSectionRemove">Remover Produto</h2>
       <div id="remove">
         <label for="remover">Indice:</label>
         <input type="text" name="remover" id="remover" />
         <button id="btnRemover">Remover</button>
-        <hr />
       </div>
+      <hr />
     </section>
     <section id="sectionContent"></section>
   </body>
