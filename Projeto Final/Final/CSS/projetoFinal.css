@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#textoTitlo {
+  text-align: center;
+  margin: 20px;
+}
+#textSectionAdd {
+  text-align: center;
+  margin: 10px;
+}
+#add {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}
+#nome,
+#indice,
+#custo,
+#quantidade,
+#valor {
+  width: 100px;
+}
+#textoSectionRemove {
+  margin: 10px;
+  text-align: center;
+}
+#remove {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+#remover {
+  width: 100px;
+}

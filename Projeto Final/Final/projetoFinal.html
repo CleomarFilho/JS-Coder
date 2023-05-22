@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contole de estoque</title>
+    <script defer src="projetoFinal.Js"></script>
+  </head>
+  <body>
+    <h1>Controle de estoque</h1>
+    <hr />
+    <section id="sectionAdd">
+      <h2>Cadastro de novo Produto</h2>
+      <div id="add">
+        <label for="indice">Indice:</label>
+        <input type="text" name="indice" id="indice" />
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" />
+        <label for="custo">Custo (produção):</label>
+        <input type="text" name="custo" id="custo" />
+        <label for="quantidade">Quantidade:</label>
+        <input type="text" name="quantidade" id="quantidade" />
+        <label for="valor">Valor (venda):</label>
+        <input type="text" name="valor" id="valor" />
+        <button id="btnAdd">Cadastrar</button>
+        <hr />
+      </div>
+    </section>
+    <section id="sectionRemove">
+      <h2>Remover Produto</h2>
+      <div id="remove">
+        <label for="remover">Indice:</label>
+        <input type="text" name="remover" id="remover" />
+        <button id="btnRemover">Remover</button>
+        <hr />
+      </div>
+    </section>
+    <section id="sectionContent"></section>
+  </body>
+</html>
