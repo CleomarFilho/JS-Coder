@@ -73,5 +73,5 @@ function removerProduto() {
     alert("Não há produto com esse indice!")
   }
   document.getElementById("remover").value = ""
-  produtos[remover] = false
+  produtos[indice] = false
 }
