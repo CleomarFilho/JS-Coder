@@ -1,38 +1,66 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans&display=swap");
+body {
+  font-family: "work sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fde9d9;
+}
+
+header {
+  background-color: #076933;
+  color: #fff;
+  padding: 20px;
+}
+
+#textoTitulo {
+  margin: 0;
+}
+
+section {
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #05010a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  transform: scale(1.1);
+  border: 2px solid white;
+}
+
+ul {
+  list-style-type: none;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
-#textoTitlo {
-  text-align: center;
-  margin: 20px;
+
+li {
+  margin-bottom: 10px;
 }
-#textSectionAdd {
-  text-align: center;
-  margin: 10px;
-}
-#add {
-  display: flex;
-  margin: 10px;
-  justify-content: space-between;
-}
-#nome,
-#indice,
-#custo,
-#quantidade,
-#valor {
-  width: 100px;
-}
-#textoSectionRemove {
-  margin: 10px;
-  text-align: center;
-}
-#remove {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px;
-}
-#remover {
-  width: 100px;
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
 }
