@@ -62,12 +62,22 @@ function addProduto() {
   document.getElementById("custo").value = ""
   document.getElementById("quantidade").value = ""
   document.getElementById("valor").value = ""
+  Swal.fire({
+    title: "Sucesso!",
+    text: "Produto adicionado com sucesso.",
+    icon: "success",
+  });
 }
 function removerProduto() {
   const indice = document.getElementById("remover").value
   const produtoRemovido = document.getElementById(`produto-${indice}`)
   if (produtoRemovido) {
     document.getElementById("sectionContent").removeChild(produtoRemovido)
+    Swal.fire({
+      title: "Sucesso!",
+      text: "Produto removido com sucesso.",
+      icon: "success",
+    });
   }
   else {
     alert("Não há produto com esse indice!")

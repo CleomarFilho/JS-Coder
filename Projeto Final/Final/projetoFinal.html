@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contole de estoque</title>
     <link rel="stylesheet" href="CSS/projetoFinal.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="JS/projetoFinal.Js"></script>
   </head>
   <body>
@@ -15,15 +16,15 @@
       <h2 id="textSectionAdd">Cadastro de novo Produto</h2>
       <div id="add">
         <label for="indice">Indice:</label>
-        <input type="text" name="indice" id="indice" />
+        <input type="text" name="indice" id="indice" required />
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" />
+        <input type="text" name="nome" id="nome" required />
         <label for="custo">Custo (produção):</label>
-        <input type="text" name="custo" id="custo" />
+        <input type="text" name="custo" id="custo" required />
         <label for="quantidade">Quantidade:</label>
-        <input type="text" name="quantidade" id="quantidade" />
+        <input type="text" name="quantidade" id="quantidade" required />
         <label for="valor">Valor (venda):</label>
-        <input type="text" name="valor" id="valor" />
+        <input type="text" name="valor" id="valor" required />
         <button id="btnAdd">Cadastrar</button>
       </div>
       <hr />
