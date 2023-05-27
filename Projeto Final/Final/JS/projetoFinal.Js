@@ -40,6 +40,15 @@ function addProduto() {
   const lucratividade = lucroProduto(custo, valor, quantidade)
   lucratividadeLi.innerText = `Lucro de venda Total: ${lucratividade}`
 
+  if (!indice || !nome || !custo || !quantidade || !valor) {
+    Swal.fire({
+      title: "Erro!",
+      text: "Por favor, preencha todos os campos",
+      icon: "error",
+    });
+    return;
+  }
+
   ul.append(indiceLi, nomeLi, custoLi, quantidadeLi, valorLi, lucratividadeLi, hr)
   sectionContent.appendChild(ul)
 
@@ -80,7 +89,11 @@ function removerProduto() {
     });
   }
   else {
-    alert("Não há produto com esse indice!")
+    Swal.fire({
+      title: "Erro!",
+      text: "Não há produto com esse indice",
+      icon: "error",
+    });
   }
   document.getElementById("remover").value = ""
   produtos[indice] = false
