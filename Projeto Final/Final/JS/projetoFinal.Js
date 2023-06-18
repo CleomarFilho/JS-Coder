@@ -3,11 +3,13 @@ const btnRemover = document.getElementById("btnRemover")
 const btnAddress = document.getElementById("btnAddress")
 const btnClear = document.getElementById("btnClear")
 const btnStorage = document.getElementById("btnStorage")
+const btnClearAll = document.getElementById("btnClearAll")
 const sectionContent = document.getElementById("sectionContent")
 const produtos = {}
 btnAddress.addEventListener("click", buscarCep)
 btnClear.addEventListener("click", limparCep)
 btnStorage.addEventListener("click", cadastroStorage)
+btnClearAll.addEventListener("click", limparTudo)
 btnAdd.addEventListener("click", addProduto)
 btnRemover.addEventListener("click", removerProduto)
 function buscarCep() {
@@ -96,6 +98,32 @@ function cadastroStorage() {
     Swal.fire({
       title: "Erro!",
       text: "Preencha todos os campos de forma válida",
+      icon: "error",
+    });
+  }
+}
+function limparTudo() {
+  const nomeAddress = document.getElementById("nomeAddress").value
+  const cep = document.getElementById("cep").value
+  const rua = document.getElementById("rua").value
+  const numero = document.getElementById("numero").value
+  const bairro = document.getElementById("bairro").value
+  const cidade = document.getElementById("cidade").value
+  const estado = document.getElementById("estado").value
+
+  if (nomeAddress || cep || rua || numero || bairro || cidade || estado) {
+    document.getElementById("nomeAddress").value = "";
+    document.getElementById("cep").value = "";
+    document.getElementById("rua").value = "";
+    document.getElementById("numero").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("estado").value = "";
+  }
+  else {
+    Swal.fire({
+      title: "Erro!",
+      text: "Os campos estão todos limpos",
       icon: "error",
     });
   }
