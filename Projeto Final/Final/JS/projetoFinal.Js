@@ -1,9 +1,105 @@
 const btnAdd = document.getElementById("btnAdd")
 const btnRemover = document.getElementById("btnRemover")
+const btnAddress = document.getElementById("btnAddress")
+const btnClear = document.getElementById("btnClear")
+const btnStorage = document.getElementById("btnStorage")
 const sectionContent = document.getElementById("sectionContent")
 const produtos = {}
+btnAddress.addEventListener("click", buscarCep)
+btnClear.addEventListener("click", limparCep)
+btnStorage.addEventListener("click", cadastroStorage)
 btnAdd.addEventListener("click", addProduto)
 btnRemover.addEventListener("click", removerProduto)
+function buscarCep() {
+  const cep = document.getElementById("cep").value;
+  if (cep.trim() === "") {
+    Swal.fire({
+      title: "Erro!",
+      text: "Por favor, preencha o campo CEP.",
+      icon: "error",
+    });
+    return; // Encerra a função caso o CEP esteja vazio
+  }
+
+  fetch(`https://viacep.com.br/ws/${cep.replaceAll('-', '')}/json/`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.erro) {
+        Swal.fire({
+          title: "Erro!",
+          text: "CEP inválido. Por favor, insira um CEP válido.",
+          icon: "error",
+        });
+      } else {
+        document.getElementById("rua").value = data.logradouro;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.localidade;
+        document.getElementById("estado").value = data.uf;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      Swal.fire({
+        title: "Erro!",
+        text: "Ocorreu um erro ao buscar o endereço. Por favor, digite um CEP válido",
+        icon: "error",
+      });
+      document.getElementById("cep").value = "";
+    });
+}
+function limparCep() {
+  const cep = document.getElementById("cep").value
+  if (cep) {
+    document.getElementById("cep").value = "";
+    document.getElementById("rua").value = "";
+    document.getElementById("numero").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("estado").value = "";
+  }
+  else {
+    Swal.fire({
+      title: "Erro!",
+      text: "O campo 'CEP' está vazio",
+      icon: "error",
+    });
+  }
+}
+function cadastroStorage() {
+  const nomeAddress = document.getElementById("nomeAddress").value
+  const cep = document.getElementById("cep").value
+  const rua = document.getElementById("rua").value
+  const bairro = document.getElementById("bairro").value
+  const cidade = document.getElementById("cidade").value
+  const estado = document.getElementById("estado").value
+  if (nomeAddress && cep && rua && bairro && cidade && estado) {
+
+    sessionStorage.setItem("Nome End.", nomeAddress)
+
+    sessionStorage.setItem("cep", cep)
+
+    sessionStorage.setItem("rua", rua)
+
+    sessionStorage.setItem("bairro", bairro)
+
+    sessionStorage.setItem("estado", estado)
+
+    document.getElementById("nomeAddress").value = "";
+    document.getElementById("cep").value = "";
+    document.getElementById("rua").value = "";
+    document.getElementById("numero").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("estado").value = "";
+  }
+  else {
+    Swal.fire({
+      title: "Erro!",
+      text: "Preencha todos os campos de forma válida",
+      icon: "error",
+    });
+  }
+}
 function lucroProduto(custo, valor, quantidade) {
   return quantidade * valor - quantidade * custo
 }
