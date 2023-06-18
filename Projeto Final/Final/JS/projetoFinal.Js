@@ -110,7 +110,11 @@ function addProduto() {
   const indiceLi = document.createElement("li")
   const indice = document.getElementById("indice").value
   if (produtos[indice]) {
-    alert("Já existe um produto com esse indice!")
+    Swal.fire({
+      title: "Erro!",
+      text: "Já há um produto com esse indice",
+      icon: "error",
+    });
     return
   }
   indiceLi.innerText = `Indice: ${indice}`
