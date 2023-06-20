@@ -20,7 +20,7 @@ function buscarCep() {
       text: "Por favor, preencha o campo CEP.",
       icon: "error",
     });
-    return; // Encerra a função caso o CEP esteja vazio
+    return;
   }
 
   fetch(`https://viacep.com.br/ws/${cep.replaceAll('-', '')}/json/`)
